@@ -1,0 +1,21 @@
+<mvc:View height="100%" controllerName="webapp.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:captcha="webapp.control.ui5captcha">
+	<App>
+		<Page class="sapUiContentPadding" showNavButton="false" showHeader="true" id="pageWebGui" title="{i18n>Title}">
+			<content>
+				<Button text="Generate Captcha" press="onCaptchaGenerate" visible="false"/>
+				<Label text="{i18n>formInput}" labelFor="f1"/>
+				<Input id="f1" placeholder="{i18n>voaf}"/>
+
+				<!-- This is the sample UI5 Captcha Control -->
+				<captcha:ui5captcha id="captcha" change="onCaptchaChange" captchaLength="4"/>
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button id="submit" text="{i18n>submit}" enabled="false" press="onSubmit" type="Accept"/>
+					<Button id="reset" text="{i18n>reset}" enabled="true" press="onResetCaptcha" type="Reject"/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

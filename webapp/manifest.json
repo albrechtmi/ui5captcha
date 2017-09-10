@@ -1,0 +1,48 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {},
+    "sap.ui": {},
+    "resources": {
+      "css": [
+                  {
+                      "uri": "css/style.css"
+                  }
+              ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "rootView": "webapp.views.App",
+        "dependencies": {
+
+        },
+        "models": {
+        	  "i18n": {
+        		"type": "sap.ui.model.resource.ResourceModel",
+        		"settings": {
+        		  "bundleName": "webapp.i18n.messagebundle"
+        		}
+        	  }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "webapp.router.Router",
+                "viewType": "XML",
+                "viewPath": "webapp.views",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "transition": "slide"
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "main",
+                "target": "home"
+            }],
+            "targets": {
+                "home": {
+                    "viewName": "main",
+                    "viewLevel": 1
+                }
+            }
+        }
+    }
+}
